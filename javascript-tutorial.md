@@ -1,4 +1,4 @@
-# 2012/6/18 上課大綱
+# JavaScript Introduction
 
 從上次計時器的[範例](http://jsfiddle.net/josephj/jZrgW/4/)出發 
 
