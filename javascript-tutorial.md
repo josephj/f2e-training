@@ -34,7 +34,8 @@
    * 字串，用 "" 或 '' 括起來
    * 布林值 true、false
    * 物件 {} 存取使用 .
-       
+
+```javascript       
          var students = {
             knock: {
                 gender: "male",
@@ -45,11 +46,13 @@
                 position: "engineer"
             }
          };
-        
          alert(students.knock.position);  // "manager"
+```
+        
        
    * 陣列 [] 存取使用 index (從 0 開始)
    
+```javascript       
          var students = [
             {
                 name: "knock",
@@ -64,9 +67,11 @@
          ];
         
          alert(students[1].name); // ?
-         
+```
+
    * 函式 [Function](http://www.w3schools.com/js/js_functions.asp)     有兩種寫法 
     
+```javascript       
           var setUI = function () {
               // do something here...
           };
@@ -74,6 +79,8 @@
           function setUI() {
               // do something here...
           }
+```
+
        * Arguments
        * Return 
        * Closure - 跟別的語言很不一樣、一定要搞懂的地方！！！
