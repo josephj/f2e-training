@@ -2,6 +2,7 @@
 
 從上次計時器的[範例](http://jsfiddle.net/josephj/jZrgW/4/)出發 
 
+```javascript
     // setInterval(<要執行的函式>, <每 N 毫秒執行一次>);
     window.timer = setInterval(function () {
         // 取得此 DOM 節點的元素
@@ -19,7 +20,8 @@
             clearInterval(window.timer);
         }
     }, 1000);
-​
+```
+
 ## JavaScript
 
 與 HTML 無關的部份！
