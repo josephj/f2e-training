@@ -112,6 +112,7 @@
    * if … else if … else if … else ...
    * 寫一個判斷式：hour 變數在 6 ~ 12 時 alert("Good Morning")、在 12 ~ 18 時 alert("Good Afternoon");、在 18 ~ 24 時 alert("Good Evening");、其他時段則 alert("It's midnight");
 
+```javascript 
          var hour = 8;
          var greeting = "";
          if (hour >= 6 && hour < 12) {
@@ -124,6 +125,7 @@
              greeting = "It's midnight";
          }       
          alert(greeting);
+```
         
 1. 迴圈 [For Loop](http://www.w3schools.com/js/js_loop_for.asp)
    * for (i=開始值; i<結束值; i++) { … }
