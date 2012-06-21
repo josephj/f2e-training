@@ -8,13 +8,13 @@
 
 ## Lession 2 - 樣式之美 (CSS)
 * 投影片：[模組基礎與常用 CSS](https://speakerdeck.com/u/josephj/p/css)
-* 上課大綱：[JavaScript Basic](https://github.com/josephj/f2e-training/blob/master/javascript-basic.md])
+* 上課大綱：[JavaScript Basic](https://github.com/josephj/f2e-training/blob/master/javascript-basic.md)
 * 免費 Compass 桌面軟體（通用 MAC 與 Windows）- [Scout](http://mhs.github.com/scout-app/)
 * Compass 試做 Auto Sprite 與 DataURI - [下載範例](http://josephj.com/training/compass.zip)
 * [用 setInterval 製作倒數計時](http://jsfiddle.net/josephj/jZrgW/)
 
 ## Lession 3 - 賦予生命 (JavaScript)
-* 上課大綱：[JavaScript Basic](https://github.com/josephj/f2e-training/blob/master/javascript-basic.md])
+* 上課大綱：[JavaScript Basic](https://github.com/josephj/f2e-training/blob/master/javascript-basic.md)
 * 範例列表：
   * [用 on 綁定事件](http://jsfiddle.net/josephj/AW2EU/)
   * [命名空間](http://jsfiddle.net/josephj/uE3hP/)
@@ -26,6 +26,6 @@
 
 ## Lession 4 - 合而為一 (Javacript 操控 HTML/CSS)
 * 目標：深入了解 JavaScript，並利用前面所學、製作簡易動畫、開始使用 YUI
-* 上課大綱：[JavaScript DOM / Event](https://github.com/josephj/f2e-training/blob/master/javascript-dom-event.md])
+* 上課大綱：[JavaScript DOM / Event](https://github.com/josephj/f2e-training/blob/master/javascript-dom-event.md)
 
 
