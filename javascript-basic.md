@@ -1,4 +1,4 @@
-# JavaScript Introduction
+# Lession 3 - 賦予生命 (JavaScript)
 
 從上次計時器的[範例](http://jsfiddle.net/josephj/jZrgW/4/)出發 
 
@@ -131,19 +131,52 @@
    * for (i=開始值; i<結束值; i++) { … }
    * 從 1 加到 10 怎麼做？
    
-## DOM API
+## 物件
 
-* API - 統一的存取介面。
-* DOM API - 瀏覽器所提供、讓 JavaScript 可以操作 HTML 元素的 API。
-* jQuery、YUI 的基礎都是在操作 DOM API。
+### 什麼是物件？
+
+* 元件是個軀殼、用來產生物件（天神用來造人的模子）
+* 物件是獨立的個體，有自己的屬性及方法（人）
+* 屬性是此個體的資料（例如人的身高體重）
+* 方法是此個體的可允許的動作（人講話、走路...）
+* 事件是此個體有可能碰到的情況 (人跌倒、講完話)
+* 物件導向就是以這樣的概念來實作。
+
+````javascript
+    // 建立元件
+    function People(weight, height) {
+        this.weight = weight;
+        this.height = height;
+    }
+    People.prototype.say = function () {
+    };
+    People.prototype.speak = function () {
+    };
+    
+    // 建立物件
+    var people = new People();
+    people.say();   
+````
 
 
-## Event API
-* JavaScript 與其他語言最大的不同：使用者事件驅動
-* on<type>
-* W3C - addEventListener、 IE - attachEvent()
-* Event Bubbling、Event Capturing
-* jQuery、YUI 的基礎也包含了操作 Event API。
+### JavaScript 中、所有的型別都是物件！
 
+#### String
+* [JavaScript String Object @ W3School](http://www.w3schools.com/jsref/jsref_obj_string.asp)
+* length 此字串總長度
+* replace(from, to) 把 from 改為 to
+* indexOf(str) 從字串中找到 str 的位置
+* substr(x, y)  以索引值 x 開始取 y 個字
+* substring(x, y) 以索引值 x ~ y 取得部份內容
+* split() 拆開成字串
 
-## Play with YUI
+#### Array
+* [JavaScript String Object @ W3School](http://www.w3schools.com/jsref/jsref_obj_array.asp)
+* length
+* push()
+* join()
+
+#### Date 
+* [JavaScript Date Object](http://www.w3schools.com/jsref/jsref_obj_date.asp)
+* getHours(), getDate(), getMinutes
+* getTime() 你等了多久才按下按鈕
