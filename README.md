@@ -8,9 +8,10 @@
 
 ## Lession 2 - 樣式之美 (CSS)
 * 投影片：[模組基礎與常用 CSS](https://speakerdeck.com/u/josephj/p/css)
-* Compass 試做 Auto Sprite 與 DataURI
-  * 上課大綱：[JavaScript Basic](https://github.com/josephj/f2e-training/blob/master/javascript-basic.md])
-  * [用 setInterval 製作倒數計時](http://jsfiddle.net/josephj/jZrgW/)
+* 上課大綱：[JavaScript Basic](https://github.com/josephj/f2e-training/blob/master/javascript-basic.md])
+* 免費 Compass 桌面軟體（通用 MAC 與 Windows）- [Scout](http://mhs.github.com/scout-app/)
+* Compass 試做 Auto Sprite 與 DataURI - [下載範例](http://josephj.com/training/compass.zip)
+* [用 setInterval 製作倒數計時](http://jsfiddle.net/josephj/jZrgW/)
 
 ## Lession 3 - 賦予生命 (JavaScript)
 * 上課大綱：[JavaScript Basic](https://github.com/josephj/f2e-training/blob/master/javascript-basic.md])
