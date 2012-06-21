@@ -1,0 +1,31 @@
+/* Compass Auto Sprite Version */
+@import "compass";
+@import "compass/utilities/sprites";
+@import "player/*.png";
+#media {
+    background: pink;
+    width: 500px;
+    li {
+        height: 40px;
+        line-height: 40px;
+        span {
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 40px;
+            @include inline-block();
+        }
+    }
+    li.photos span {
+        @include player-sprite(ico_photos_default_small);
+    }
+    li.music span {
+        @include player-sprite(ico_music_default_small);
+    }
+    li.videos span {
+        @include player-sprite(ico_videos_default_small);
+    }
+    li.documents span {
+        @include player-sprite(ico_documents_default_small);
+    }
+}

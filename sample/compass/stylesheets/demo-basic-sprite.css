@@ -1,0 +1,44 @@
+/* Basic Sprite Version */
+/* line 3, ../sass/demo-basic-sprite.scss */
+#media {
+  background: pink;
+  width: 500px;
+}
+/* line 6, ../sass/demo-basic-sprite.scss */
+#media li {
+  height: 40px;
+  line-height: 40px;
+}
+/* line 9, ../sass/demo-basic-sprite.scss */
+#media li span {
+  height: 40px;
+  width: 40px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../images/sp_ico_media.png);
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, ../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#media li span {
+  *display: inline;
+}
+/* line 17, ../sass/demo-basic-sprite.scss */
+#media li.photos span {
+  background-position: 0 0;
+}
+/* line 20, ../sass/demo-basic-sprite.scss */
+#media li.music span {
+  background-position: 0 -40px;
+}
+/* line 23, ../sass/demo-basic-sprite.scss */
+#media li.videos span {
+  background-position: 0 -80px;
+}
+/* line 26, ../sass/demo-basic-sprite.scss */
+#media li.documents span {
+  background-position: 0 -120px;
+}

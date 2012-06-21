@@ -1,0 +1,43 @@
+/* No Sprite Version */
+/* line 3, ../sass/demo.scss */
+#media {
+  background: yellow;
+  width: 500px;
+}
+/* line 6, ../sass/demo.scss */
+#media li {
+  height: 40px;
+  line-height: 40px;
+}
+/* line 9, ../sass/demo.scss */
+#media li span {
+  height: 40px;
+  width: 40px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, ../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#media li span {
+  *display: inline;
+}
+/* line 16, ../sass/demo.scss */
+#media li.photos span {
+  background-image: url(../images/player/ico_photos_default_small.png);
+}
+/* line 19, ../sass/demo.scss */
+#media li.music span {
+  background-image: url(../images/player/ico_music_default_small.png);
+}
+/* line 22, ../sass/demo.scss */
+#media li.videos span {
+  background-image: url(../images/player/ico_videos_default_small.png);
+}
+/* line 25, ../sass/demo.scss */
+#media li.documents span {
+  background-image: url(../images/player/ico_documents_default_small.png);
+}

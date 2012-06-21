@@ -1,0 +1,29 @@
+/* No Sprite Version */
+@import "compass";
+#media {
+    background: yellow;
+        width: 500px;
+        li {
+            height: 40px;
+                line-height: 40px;
+                span {
+                    height: 40px;
+                    width: 40px;
+                    background-position: left center;
+                    background-repeat: no-repeat;
+                    @include inline-block();
+                }
+                &.photos span {
+                    background-image: url(../images/player/ico_photos_default_small.png);
+                }
+                &.music span {
+                    background-image: url(../images/player/ico_music_default_small.png);
+                }
+                &.videos span {
+                    background-image: url(../images/player/ico_videos_default_small.png);
+                }
+                &.documents span {
+                    background-image: url(../images/player/ico_documents_default_small.png);
+                }
+        }
+}
