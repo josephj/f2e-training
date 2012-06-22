@@ -1,0 +1,174 @@
+a:link, a:visited {
+    color:#00549a;
+    text-decoration:none;
+}
+a:hover {
+    color:#f30;
+    text-decoration:none;
+}
+/* 清除 floating */
+.clearfix {
+    zoom:1;
+}
+.clearfix:after {
+    clear:both;
+    content:'';
+    display:block;
+}
+#ad {
+    margin-bottom:10px;
+}
+#ad h2 {
+    color:#ccc;
+    margin-bottom:5px;
+    text-align:center;
+}
+#ad .ft {
+    text-align:center;
+}    
+#article {
+    margin-bottom:20px;
+}
+#article h1 {
+    font-weight:bold;
+    font-size:123.1%;
+}
+#article .hd {
+    margin-bottom:20px;
+}
+#article .bd {
+    margin:0 20px;
+    text-align:center;
+}
+#article .bd p {
+    line-height:1.5;
+    margin-bottom:10px;
+}
+#article .bd blockquote {
+    border:solid 1px #ccc;
+    background:#efefef;
+    font-family:'Courier New';
+    line-height:1.5;
+    padding:10px;
+    margin:0 20px 10px;
+}
+#article .ft {
+    margin:30px 20px 10px;
+    text-align:right;
+}    
+#article .ft span {
+    background:url(http://l.yimg.com/tw.yimg.com/i/tw/movie/i6/icon_more.gif) left top no-repeat;
+}
+#article .ft a {
+    padding-left:20px;
+}
+#masthead {
+    margin:10px 0;
+}
+#masthead .bd .title {
+    font-size:197%;
+    font-weight:bold;
+    float:left;
+}
+#masthead .bd img {
+    float:right;
+}
+#mastfoot {
+    border-top:solid 1px #ccc;
+    padding:10px 0;
+}
+#mastfoot .bd .link {
+    float:left;
+}
+#mastfoot .bd .counter {
+    float:right;
+}
+#nav {
+    margin-bottom:10px;
+}
+#relate-link {
+    border:1px solid #d5d5d5;
+    position:relative;
+    margin-bottom:10px;
+    z-index:0;
+    zoom:1;
+}
+#relate-link .mod-content {
+    position:relative;
+    z-index:2;
+}
+#relate-link .x1, 
+#relate-link .x2 {
+    position:absolute;
+    right:-1px;
+    text-align:left;
+    width:100%;
+}
+#relate-link .x1, 
+#relate-link .x2,
+#relate-link .x1a, 
+#relate-link .x2a {
+    background-image:url(http://l.yimg.com/us.js.yimg.com/lib/ks/tw/i8/rc_gray_sprite.gif);
+    background-repeat:no-repeat;
+    clear:both;
+    display:block;
+    font-size:0;
+    height:5px;
+}
+#relate-link .x1a,
+#relate-link .x2a {
+    display:block;
+    height:5px;
+    position:relative;
+    width:5px;
+}
+#relate-link .x1 {
+    background-position:100% -10px;
+    top:-1px;
+}
+#relate-link .x1a {
+    background-position:0 0;
+    left:-2px;
+}
+#relate-link .x2 {
+    position:absolute;
+    background-position:100% 100%;
+    bottom:-1px;
+    right:-1px;
+    _bottom:-2px;
+}
+#relate-link .x2a {
+    background-position:0 -5px;
+    left:-2px;
+}
+#relate-link .hd {
+    background:#f2f2f2;
+    margin:1px;
+    padding:5px 0 3px 5px;
+}
+#relate-link .hd h2 {
+    font-size:123.1%;
+    font-weight:bold;
+}
+#relate-link .bd h3 {
+    background:#ffe;
+    color:#999;
+    margin-bottom:5px;
+    padding:5px;
+}
+#relate-link .bd ul {
+    margin:0 10px;
+}
+#relate-link .bd ul li {
+    background:url(http://l.yimg.com/us.js.yimg.com/lib/ks/tw/i8/generic_dot.gif) left center no-repeat;
+    border-bottom:solid 1px #ccc;
+    color:#cccccc;
+    padding-left:15px;
+    padding-bottom:3px;
+    margin-bottom:3px;
+}
+#relate-link .bd ul li span {
+}
+#relate-link .bd ul li.last {
+    border:none;
+}

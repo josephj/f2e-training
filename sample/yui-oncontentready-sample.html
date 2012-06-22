@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>善用 onContentReady</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript">
+var YUE = YAHOO.util.Event;
+// YAHOO.util.Event.onContentReady 的意思是：當「某個模組」出現在頁面上且讀取完畢、就執行「某個函式」
+
+function getModuleId() {
+    // this 即表示這個模組的 DOM 物件
+    if (typeof console !== 'undefined') {
+        console.log(this.id);
+    }
+    else {
+        alert(this.id);
+    }
+}
+YUE.onContentReady('masthead', getModuleId);
+YUE.onContentReady('nav', getModuleId);
+YUE.onContentReady('article', getModuleId);
+YUE.onContentReady('ad', getModuleId);
+YUE.onContentReady('relate-link', getModuleId);
+YUE.onContentReady('mastfoot', getModuleId);
+YUE.onContentReady('asabulu', getModuleId); // asabulu 並未被執行到，因為不存在於現有頁面上
+</script>
+</head>
+<body class="yui-skin-sam">
+    <div id="doc2" class="yui-t5">
+        <div id="hd">
+            <!-- MODULE #masthead 頁首模組 (開始) {{{ -->
+            <div id="masthead">
+                <div class="bd">
+                #masthead<br>
+                頁首模組
+                </div>
+            </div>
+            <!-- MODULE #masthead 頁首模組 (結束) }}} -->
+            <!-- MODULE #nav 導覽列模組 (開始) {{{ -->
+            <div id="nav">
+                <div class="bd">
+                #nav<br>
+                導覽列模組
+                </div>
+            </div>
+            <!-- MODULE #nav 導覽列模組 (結束) }}} -->
+        </div>
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+                    <!-- MODULE #article 文章模組 (開始) {{{ -->
+                    <div id="article">
+                        <div class="bd">
+                        #article<br>
+                        文章模組
+                        </div>
+                    </div>
+                    <!-- MODULE #article 文章模組 (結束) }}} -->
+                </div>
+            </div>
+            <div class="yui-b">
+                <!-- MODULE #ad 廣告模組 (開始) {{{ -->
+                <div id="ad">
+                    <div class="bd">
+                    #ad<br>
+                    廣告模組
+                    </div>
+                </div>
+                <!-- MODULE #ad 廣告模組 (結束) }}} -->
+                <!-- MODULE #relate-link 相關連結模組 (開始) {{{ -->
+                <div id="relate-link">
+                    <div class="bd">
+                    #relate-link<br>
+                    相關連結模組
+                    </div>
+                </div>
+                <!-- MODULE #relate-link 相關連結模組 (結束) }}} -->
+            </div>
+        </div>
+        <div id="ft">
+            <!-- MODULE #mastfoot 頁尾模組 (開始) {{{ -->
+            <div id="mastfoot">
+                <div class="bd">
+                #mastfoot<br>
+                頁尾模組
+                </div> 
+            </div>
+            <!-- MODULE #mastfoot 頁尾模組 (結束) }}} -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>CSS 圓角</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+<style type="text/css">
+#link {
+    border:solid 1px #295c7d;
+    background:#6ff;
+    margin:10px 0;
+    zoom:1;
+}
+#link .hd {
+    margin:1px;
+    padding:5px 0 3px 5px;
+}
+#link .hd h2 {
+    font-size:123.1%;
+    font-weight:bold;
+}
+#link .bd ul {
+    margin:0 10px;
+}
+#link .bd ul li {
+    background:url(http://l.yimg.com/us.js.yimg.com/lib/ks/tw/i8/generic_dot.gif) 0 2px no-repeat;
+    border-bottom:solid 1px #ccc;
+    padding-left:15px;
+    padding-bottom:5px;
+    margin-bottom:5px;
+}
+#link .bd ul li.last {
+    border:none;
+}
+#link .ft {
+    text-align:center;
+    padding:5px;
+}
+</style>
+<style>
+#link {
+    position:relative;
+}
+#link .x1 {
+    background:url(http://www.lesliesommer.com/wdw07/html/images/cr_big.gif) 100% 0 no-repeat;
+    position:absolute;
+    width:100%;
+    top:-1px;
+    right:-1px;
+}
+#link .x1 .x1a {
+    background:url(http://www.lesliesommer.com/wdw07/html/images/cr_big.gif) 0 -36px no-repeat;
+    display:block;
+    height:18px;
+    width:18px;
+    position:relative;
+    left:-2px;
+}
+#link .x2 {
+    background:url(http://www.lesliesommer.com/wdw07/html/images/cr_big.gif) 100% -18px no-repeat;
+    position:absolute;
+    bottom:-1px;
+    right:-1px;
+    width:100%;
+    _bottom:-2px;
+}
+#link .x2 .x2a {
+    background:url(http://www.lesliesommer.com/wdw07/html/images/cr_big.gif) 100% -54px no-repeat;
+    display:block;
+    left:-2px;
+    height:18px;
+    position:relative;
+    width:18px;
+}
+#link .mod-content {
+    position:relative;
+    z-index:2;
+}
+</style>
+</head>
+<body>
+<body class="yui-skin-sam">
+    <div id="doc2" class="yui-t5">
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+                </div>
+            </div>
+            <div class="yui-b">
+
+                <!-- 這是一個位於側邊欄的好站連結模組 -->
+                <div id="link">
+                    <span class="x1"><span class="x1a"></span></span>
+                    <span class="x2"><span class="x2a"></span></span>
+                    <div class="mod-content">
+                        <div class="hd">
+                            <h2>F2E 新手入門文章</h2>
+                        </div>
+                        <div class="bd">
+                            <ul>
+                                <li>
+                                    <a href="http://tantek.com/presentations/2005/09/elements-of-xhtml/">The Elements of Meaningful XHTML</a> 
+                                </li>
+                                <li>
+                                    <a href="http://www.456bereastreet.com/archive/200410/bring_on_the_tables/">Bring on Tables</a> 
+                                </li>
+                                <li>
+                                    <a href="http://www.onlinetools.org/articles/unobtrusivejavascript/">Unobtrusive Javascript</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://www.hedgerwow.com/360/bugs/css-select-free.html">&lt;SELECT&gt; - Free Layer</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ft">
+                            <a href="http://delicious.com/josephj/newbie">更多連結...</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

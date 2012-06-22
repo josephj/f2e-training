@@ -1,0 +1,31 @@
+#link {
+    border:solid 1px #295c7d;
+    background:#6ff;
+    margin:10px 0;
+    zoom:1;
+}
+#link .hd {
+    margin:1px;
+    padding:5px 0 3px 5px;
+}
+#link .hd h2 {
+    font-size:123.1%;
+    font-weight:bold;
+}
+#link .bd ul {
+    margin:0 10px;
+}
+#link .bd ul li {
+    background:url(http://l.yimg.com/us.js.yimg.com/lib/ks/tw/i8/generic_dot.gif) 0 2px no-repeat;
+    border-bottom:solid 1px #ccc;
+    padding-left:15px;
+    padding-bottom:5px;
+    margin-bottom:5px;
+}
+#link .bd ul li.last {
+    border:none;
+}
+#link .ft {
+    text-align:center;
+    padding:5px;
+}

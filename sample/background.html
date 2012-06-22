@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>CSS 背景圖</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+<style type="text/css">
+a {
+    color:#fff;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
+.clearfix {
+    zoom:1;
+}
+.clearfix:after {
+    clear:both;
+    content:'';
+    display:block;
+}
+#nav {
+    /* 步驟 1 : 請設定背景圖為 http://josephj.com/training/ncu/bg_nav.png */
+    background:#2647a0;
+    border:solid 1px #ccc;
+    margin:10px;
+}
+#nav .bd ul li {
+    float:left;
+    border-right:solid 1px #ccc;
+}
+#nav .bd ul li a {
+    display:block;
+    padding:10px;
+}
+</style>
+</head>
+<body>
+<body class="yui-skin-sam">
+    <div id="doc2" class="yui-t5">
+        <div id="hd">
+
+            <!-- 這是一個選單模組 -->
+            <div id="nav">
+                <div class="bd">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">選單 1</a>
+                        </li>
+                        <li>
+                            <a href="#">選單 2</a>
+                        </li>
+                        <li>
+                            <a href="#">選單 3</a>
+                        </li>
+                        <li>
+                            <a href="#">選單 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

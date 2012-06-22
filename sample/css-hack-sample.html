@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>CSS Hack 基本</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+<style type="text/css">
+/* 步驟 2 : 請替文章模組設定樣式：h1 設為粗體、字體大小為 16px */
+#article .hd {
+    margin:10px 0;
+}
+#article .hd h1 {
+    font-size:123.1%;
+    font-weight:bold;
+}
+#article .bd {
+    /* 
+        IE6 的 background 為 red
+        IE7 的 background 為 green 
+        其餘瀏覽器的 background 為 pink
+    */
+    background:pink;
+    padding:20px;
+    margin-bottom:5px;
+    *background:green;
+    _background:red;
+}
+#article .bd p {
+    font-size:93%;
+    letter-spacing:1px;
+    line-height:1.5;
+}
+</style>
+</head>
+<body>
+<body class="yui-skin-sam">
+    <div id="doc2" class="yui-t5">
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+
+                    <!-- 這是一個文章模組 -->
+                    <div id="article">
+                        <div class="hd">
+                            <h1>Lorem Ipsum</h1>
+                        </div>
+                        <div class="bd">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

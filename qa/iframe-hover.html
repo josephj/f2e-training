@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<title> Prototype</title>
+<style type="text/css">
+iframe {background:yellow;}
+</style>
+</head>
+<body>
+    <div id="foo">
+        <iframe src="a.html" width="500" height="100" id="iframe"></iframe>
+    </div>
+    <div id="bar">
+        <iframe src="http://tw.yahoo.com/" width="500" height="100" id="iframe2"></iframe>
+    </div>
+    <script>
+    document.getElementById("iframe").onmouseover = function (e) {
+        console.log(e.type);
+    }
+    document.getElementById("iframe2").onmouseover = function (e) {
+        console.log(e.type);
+    }
+    </script>
+</body>
+</html>

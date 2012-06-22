@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>CSS 圓角</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+<link rel="stylesheet" type="text/css" href="round-corner.css">
+<style>
+#link {
+    position:relative;
+    overflow:hidden;
+}
+#link .x1 {
+    background:red;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    _height:1000px;
+}
+#link .x1 .x1a {
+    background:green;
+    display:block;
+    height:100%;
+    width:18px;
+}
+#link .x2 {
+    position:absolute;
+    bottom:0;
+    left:0;
+    background:yellow;
+    width:100%;
+}
+#link .x2 .x2a {
+    background:orange;
+    display:block;
+    height:18px;
+    width:18px;
+}
+#link .mod-content {
+    position:relative;
+    z-index:2;
+}
+</style>
+</head>
+<body>
+<body class="yui-skin-sam">
+    <div id="doc2" class="yui-t5">
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+                </div>
+            </div>
+            <div class="yui-b">
+
+                <!-- 這是一個位於側邊欄的好站連結模組 -->
+                <div id="link">
+                    <span class="x1"><span class="x1a"></span></span>
+                    <span class="x2"><span class="x2a"></span></span>
+                    <div class="mod-content">
+                        <div class="hd">
+                            <h2>F2E 新手入門文章</h2>
+                        </div>
+                        <div class="bd">
+                            <ul>
+                                <li>
+                                    <a href="http://tantek.com/presentations/2005/09/elements-of-xhtml/">The Elements of Meaningful XHTML</a> 
+                                </li>
+                                <li>
+                                    <a href="http://www.456bereastreet.com/archive/200410/bring_on_the_tables/">Bring on Tables</a> 
+                                </li>
+                                <li>
+                                    <a href="http://www.onlinetools.org/articles/unobtrusivejavascript/">Unobtrusive Javascript</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://www.hedgerwow.com/360/bugs/css-select-free.html">&lt;SELECT&gt; - Free Layer</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ft">
+                            <a href="http://delicious.com/josephj/newbie">更多連結...</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br><a href="round-corner-sample-2.html">下一步</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

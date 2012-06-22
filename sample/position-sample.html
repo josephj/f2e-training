@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>CSS 相對與絕對位置</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+<style type="text/css">
+a {
+    color:#fff;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
+.clearfix {
+    zoom:1;
+}
+.clearfix:after {
+    clear:both;
+    content:'';
+    display:block;
+}
+#nav {
+    background:#2647a0 url(http://josephj.com/training/ncu/bg_nav.png) left top repeat-x;
+    border:solid 1px #ccc;
+    margin:10px;
+}
+#nav .bd ul li {
+    float:left;
+    border-right:solid 1px #ccc;
+    /* 
+        步驟 1 :
+        我們希望這些小 icon 能浮在字的上方
+        請利用 position:relative 將 li 設為基底
+    */
+    position:relative;
+}
+#nav .bd ul li a {
+    display:block;
+    padding:10px;
+}
+#nav .bd ul li img {
+    /* 
+        步驟 2 :
+        接著利用 position:absolute 
+        配合 top, left, right, bottom 的屬性來做到 
+    */
+    position:absolute;
+    top:-5px;
+    right:-10px;
+}
+</style>
+</head>
+<body>
+<body class="yui-skin-sam">
+    <div id="doc2" class="yui-t5">
+        <div id="hd">
+
+            <!-- 這是一個選單模組，有些項目會有 new 及 best 的小 icon  -->
+            <div id="nav">
+                <div class="bd">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">選單 1</a>
+                        </li>
+                        <li>
+                            <a href="#">選單 2</a>
+                        </li>
+                        <li>
+                            <a href="#">選單 3</a>
+                            <img src="http://l.yimg.com/us.js.yimg.com/lib/ks/tw/i8/ico_new.gif" alt="new" width="28" height="14">
+                        </li>
+                        <li>
+                            <a href="#">選單 4</a>
+                            <img src="http://l.yimg.com/us.js.yimg.com/lib/ks/tw/i8/ico_bestofbest.gif" alt="best" width="28" height="14">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>YUI 視窗</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/button/assets/skins/sam/button.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css">
+<style type="text/css">
+#photo {
+    margin-bottom:10px;
+}
+#photo h2 {
+    color:#ccc;
+    margin-bottom:5px;
+    text-align:center;
+}
+#photo .ft {
+    text-align:center;
+}    
+</style>
+</head>
+<body>
+<body class="yui-skin-sam">
+    <div id="doc2" class="yui-t5">
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+
+                    <!-- 這是點選視窗後所會看到的模組 -->
+                    <div id="panel">
+                        <div class="hd">
+                            <h2>觀看照片</h2>
+                        </div>
+                        <div class="bd">
+                            <img src="http://farm4.static.flickr.com/3187/3011882631_c165e88273.jpg" width="500" height="375" alt="Yahoo! 新筆記本"></a>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="yui-b">
+
+                <!-- 這是一個位於側邊欄的最新照片模組 -->
+                <div id="photo">
+                    <div class="hd">
+                        <h2>廣告</h2>
+                    </div>
+                    <div class="bd">
+                        <a href="http://www.flickr.com/photos/josephj/3011882631/" title="Yahoo! 新筆記本 by Awoo~, on Flickr"><img src="http://farm4.static.flickr.com/3187/3011882631_c165e88273_m.jpg" width="240" height="180" alt="Yahoo! 新筆記本"></a>
+                    </div>
+                    <div class="ft">
+                        <a href="http://www.flickr.com/photos/josephj/3011882631/" id="view-link">觀看照片</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/element/element-beta-min.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/button/button-min.js"></script>
+    <script type="text/javascript">
+    // 已經有了一個 YUI Button 的例項
+    var oButton = new YAHOO.widget.Button('view-link');
+    // 請以 new YAHOO.widget.Panel([模組id]) 再做一個 YUI Panel 的例項吧，預設請設定為隱藏
+    var oPanel = new YAHOO.widget.Panel('panel', {
+        close:true,           // 是否要有關閉的按鈕
+        fixedcenter:true,     // 置中對其
+        modal:true,           // 是否開啟獨佔模式（不允許使用者與其他內容互動）
+        underlay:'shadow',    // 陰影模式
+        visible:false,        // 是否預設顯示在畫面上
+        width:'600px'         // 視窗寬度
+    });
+    oPanel.render(document.body); // 將 panel append 到 document.body 下
+    // 點選時的事件處理函式，就是觸動 Panel 的顯示 .show()
+    var onButtonClick = function(oEvent) {
+        YAHOO.util.Event.preventDefault(oEvent); // 記得要把預設的連結行為給停掉
+        oPanel.show(); // 顯示 Panel
+    }
+    // 現在則希望點選此 Button 時、開一個 Div 視窗在頁面上
+    oButton.addListener('click', onButtonClick);
+    </script>
+</body>
+</html>
