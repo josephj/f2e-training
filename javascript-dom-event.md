@@ -57,4 +57,3 @@ Reference - [HTML DOM Tutorial @ W3School](http://www.w3schools.com/htmldom/defa
 * W3C - addEventListener (Event Bubbling)
 * IE - attachEvent (Event Capturing)
 
-## Play with YUI
