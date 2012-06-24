@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animation Example</title>
+<style>
+#foo {
+    background: red;
+    border: solid 1px #000;
+    height: 40px;
+    left: 10px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    width: 40px;
+}
+</style>
+</head>
+<body>
+    <div id="foo">#foo</div>
+    <script>
+    // 在 IE 與 W3C 瀏覽器通用取得 CSS 屬性值的方式
+    function getStyle (el, property) {
+        if (document.uniqueID) {
+            return el.currentStyle[property];
+        } else {
+            return document.defaultView.getComputedStyle(el, null)[property];
+        }
+    }
+
+    // 目的：讓畫面上的 #foo 元素移動，產生動畫效果
+    // Step 1 - 用 document.getElementById 來取得 foo 節點
+
+
+    // Step 2 - 用 setInterval 做一個計時器、每 100 毫秒跑 1 次
+
+        // Step 3 - 以 el.style.<CSS 屬性名稱> 設定目前的高度
+        // Step 4 - 以自定 getStyle(元素, CSS屬性值) 取得目前 CSS 屬性值並加 1
+
+
+    </script>
+</body>
+</html>

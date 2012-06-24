@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<title> Prototype</title>
+<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+    YUI.add("kevin-zhuang", function (Y) {
+
+        // Constructor
+        function KevinZhuang(cfg) {
+            cfg = cfg || {};
+            this.height = cfg.height || "168cm";
+            this.weight = cfg.weight || "72kg";
+        }
+
+        KevinZhuang.prototype.getInfo = function () {
+           alert(this.height + "/" + this.weight);
+        };
+
+        Y.KevinZhuang = KevinZhuang;
+
+    }, "0.0.1", {requires:["space-util"]});
+
+    YUI.add("space-util", function (Y) {
+        Y.util = {
+            getThumbnail: function () {
+            },
+            getFileList: function () {
+            }
+        };
+    });
+
+    var Y = YUI().use("kevin-zhuang", "space-util", "node", function (Y) {
+        var kevin = new Y.KevinZhuang({height:"188cm", weight:"68kg"});
+        kevin.getInfo();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Remove All List Items</title>
+</head>
+<body>
+   <div id="recommend">
+        <h1>新店市好吃的餐廳</h1>
+        <ul>
+            <li>可愛村便當：台北縣新店市大豐街8號</li>
+            <li>阿輝現炒黃牛肉：台北縣新店市中興路三段225號</li>
+            <li>黑人牛肉麵：台北縣新店市中興路三段176號</li>
+            <li>蘇杭：台北縣新店市民權路25號2F</li>
+            <li>王家包子：台北縣新店市國校路25號之1</li>
+            <li>辣。四川成都小炒：台北縣新店市吉安路2-1號</li>
+            <li>山東餃子館：台北縣新店市中央路133巷19號1樓</li>
+            <li>樂陶然健康小火鍋：台北縣新店市中央五街2號</li>
+            <li>六六火鍋：台北縣新店市中央路89號</li>
+            <li>龍門客棧：台北縣新店市中央路98號之1</li>
+            <li>麵對麵：台北縣新店市中央路33號</li>
+        </ul>
+        <!-- 用 id 是比較不好的作法，這邊只是讓大家好存取節點 -->
+        <a href="#delete" id="delete-link">點選我刪除所有餐廳</a>
+    </div>
+
+    <script type="text/javascript">
+    /* http://ejohn.org/projects/flexible-javascript-events/ */
+    function addEvent(el, type, fn) {
+        if (el.attachEvent) {
+            el["e" + type + fn] = fn;
+            el[type + fn] = function () {
+                el["e" + type + fn](window.event);
+            }
+            el.attachEvent("on" + type, el[type + fn]);
+        } else {
+            el.addEventListener(type, fn, false);
+        }
+    }
+    function removeEvent(el, type, fn) {
+      if (el.detachEvent) {
+          el.detachEvent("on" + type, el[type + fn]);
+          el[type + fn] = null;
+      } else {
+          el.removeEventListener(type, fn, false);
+      }
+    }
+
+    // 目的：練習 document.getElementsByTagName() 並且以 for 迴圈移除
+
+    // Step 1 - 以 document.getElementById 取得 delete-link 連結
+
+
+    // 當點選 el、delete-link 時該如何處理？
+    var handleClick = function (e) {
+        // 防止 Click 預設行為
+        e.preventDefault();
+
+        // Step 2 - 以 document.getElementsByTagName 取得所有 li 的節點
+
+
+        // Step 3 - 用 for (起始值; 允許範圍; 遞增值) 迴圈「由後向前」刪除
+        //          起始值為 items 的總數減一、允許範圍需大於等於 0、遞增值是每次 -1
+
+
+        // 最後這個連結也沒用了，把事件跟自己都給砍掉
+        removeEvent(el, "click", handleClick);
+        el.parentNode.removeChild(el);
+    };
+
+    // 綁定 el 的點選處理事件
+    addEvent(el, "click", handleClick);
+    </script>
+
+</body>
+</html>

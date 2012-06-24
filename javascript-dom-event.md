@@ -42,7 +42,7 @@ Reference - [HTML DOM Tutorial @ W3School](http://www.w3schools.com/htmldom/defa
   * innerHTML 讀寫其內容
   * nodeName 標籤名稱
   * nodeValue 值
-  * style 屬性 = 將屬性名稱從 - 改為 camelSpace 
+  * style 屬性 = 將屬性名稱從 - 改為 camelSpace
     * 例如 background-image 可以用 el.style.backgroundImage 做設定。
   * parentNode 屬性
   * childNodes 屬性
