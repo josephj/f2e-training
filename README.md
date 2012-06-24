@@ -27,9 +27,11 @@
 ## Lesson 4 - 合而為一 (Javacript 操控 HTML/CSS)
 * 目標：深入了解 JavaScript，並利用前面所學、製作簡易動畫
 * 上課大綱：[JavaScript DOM / Event](https://github.com/josephj/f2e-training/blob/master/javascript-dom-event.md)
+* 本日實作：
+  * [Animation 實作](https://github.com/josephj/f2e-training/blob/master/sample/animation.html)
+  * [刪除節點實作](https://github.com/josephj/f2e-training/blob/master/sample/remove-all-items.html)
 
 ## Lesson 5 - YUI Fun
 * 目標：開始使用 YUI。
 * 投影片：Modularization & Loader
   * [了解 YUI 模組](http://jsfiddle.net/josephj/fK4BE/)
-
