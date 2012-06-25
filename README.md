@@ -35,3 +35,9 @@
 * 目標：開始使用 YUI。
 * 投影片：Modularization & Loader
   * [了解 YUI 模組](http://jsfiddle.net/josephj/fK4BE/)
+  * 活用 DOM 跟 Event 處理 Lesson 4 的議題
+  * 使用 Y.Anim 製作動畫
+
+## Lesson 6 - Injection
+* 目標：使用 Fiddler、了解載入 &lt;script/&gt; 的數種方式及其優缺點
+
