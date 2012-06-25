@@ -2,8 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="created" content="2012-06-25">
-<title>YUI NodeList</title>
+<title>YUI NodeList Sample</title>
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
 <script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
@@ -31,16 +30,16 @@
         </ul>
     </div>
     <script>
-    YUI().use('node-base', function (Y) {
+    YUI().use("node-base", function (Y) {
+        var module = Y.one("#article"), // 以 one 取得單個 Node
+            items = module.all(".highlighted"); // 以 all 取得多個 Node
 
-        var module = Y.one("#article"),
-            items = module.all(".highlighted");
-
+        // 一秒後將 hightlighted 這個 className 給移除
         Y.later(1000, items, function () {
+            // 因為第二個參數是 items，所以這邊的 this 就相當於 items
+            // 這樣對 this 的設定我們稱為 context
             this.removeClass("highlighted");
         });
-
-
     });
     </script>
 </body>

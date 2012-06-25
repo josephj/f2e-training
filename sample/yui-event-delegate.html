@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="created" content="2012-06-25">
-<title>YUI NodeList</title>
+<title>YUI Event Delegation</title>
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
 <script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
@@ -407,18 +407,23 @@
     <script>
     YUI().use("node", "event", function (Y) {
         var module = Y.one("#article");
+        // 當有一大堆事件要處理時，我們應該要善用 Event 的泡泡特性
+        // 只要綁最外層的事件即可
         /*
         module.on("click", function (e) {
+            // e.target 為事件發生的根源
+            // 我們以是否為 li 節點來判斷
             if (e.target.get("nodeName").toLowerCase() === "li") {
+                e.target.addClass("highlighted");
             }
         });
         */
-
+        // Delegate 可以讓事情變得更簡單
         module.delegate("click", function (e) {
             var node = e.target;
             node.setContent(node.getContent() + " is clicked.");
             node.addClass("highlighted");
-        }, "li");
+        }, "li"); // 直接用最後一個參數就可做過濾。
 
     });
     </script>

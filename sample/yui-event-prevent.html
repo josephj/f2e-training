@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="created" content="2012-06-25">
-<title>YUI NodeList</title>
+<title>YUI Event - preventDefault / stopPropagation</title>
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
 <script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
@@ -44,8 +44,8 @@
 
         module.on("click", function (e) {
             e.halt();
-            // e.preventDefault();
-            // e.stopPropagation();
+            // e.preventDefault();   // 防止 HTML 的預設行為，例如 a click 或 form submit
+            // e.stopPropagation();  // 防止事件繼續往上發生泡泡 (Bubbling)。
             var node = e.target;
             node.setContent(node.getContent() + " is clicked.");
             node.addClass("highlighted");
