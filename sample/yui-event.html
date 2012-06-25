@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="created" content="2012-06-25">
+<title>YUI NodeList</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+.highlighted {
+    background: yellow;
+}
+</style>
+</head>
+<body>
+     <div id="article">
+        <h1>新店市好吃的餐廳</h1>
+        <ul class="restaurant">
+            <li>可愛村便當：台北縣新店市大豐街8號</li>
+            <li>阿輝現炒黃牛肉：台北縣新店市中興路三段225號</li>
+            <li>黑人牛肉麵：台北縣新店市中興路三段176號</li>
+            <li>蘇杭：台北縣新店市民權路25號2F</li>
+            <li>王家包子：台北縣新店市國校路25號之1</li>
+            <li>辣。四川成都小炒：台北縣新店市吉安路2-1號</li>
+            <li>山東餃子館：台北縣新店市中央路133巷19號1樓</li>
+            <li>樂陶然健康小火鍋：台北縣新店市中央五街2號</li>
+            <li>六六火鍋：台北縣新店市中央路89號</li>
+            <li>龍門客棧：台北縣新店市中央路98號之1</li>
+            <li>麵對麵：台北縣新店市中央路33號</li>
+        </ul>
+    </div>
+    <script>
+    YUI().use("node", "event", function (Y) {
+
+        var module = Y.one("#article");
+
+        module.all("li").on("click", function (e) {
+            e.target.addClass("highlighted");
+        });
+
+    });
+    </script>
+</body>
+</html>
