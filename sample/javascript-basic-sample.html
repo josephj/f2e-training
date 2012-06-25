@@ -18,9 +18,16 @@
     // 1. 取得沒有 http:// 的
     // 提示：利用 substr()、可配合 length 方法
 
+    var protocol = "http://";
+    var url2 = url.substr(protocol.length);
+    document.write(url2 + "<br><br>");
+
     // 2. 取得 QueryString
     // 用 indexOf 找到 ? 的索引值
     // 再用 substr 取得從該索引值開始算的字串
+    var pos = url.indexOf("?");
+    var queryString = url.substr(pos + 1);
+    document.write(queryString + "<br><br>");
 
     // 3. 將 QueryString 改變成物件
     // 承上的解答
@@ -29,6 +36,30 @@
     //  p: "Nikon+D4",
     // };
     // 再利用 for loop 一個個加入
+
+    var params = queryString.split("&");
+    var o = {};
+
+    document.write(params.join("、"));
+
+    for (var i = 0; i < params.length; i ++) {
+        // params[0] = "p=Nikon+D4"
+        // params[1] = ei=UTF-8
+        // params[2] = fp_ad_hits=3
+       var arr = params[i].split("=");
+       var key = arr[0];
+       var value = arr[1];
+       o[key] = value;
+    }
+
+   console.log(o);
+
+    // 用 YUI 只要一杭就解決了
+    YUI().use("querystring", function (Y) {
+        var o = Y.QueryString.parse(queryString);
+        Y.log(o);
+    });
+
 
 
     </script>
