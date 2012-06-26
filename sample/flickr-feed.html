@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<meta name="created" content="2012-06-26">
+<title> Prototype</title>
+</head>
+<body>
+    <script>
+    var url = "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d498ec869768ecea276a7cb3906241d9&tags=miiiCasa&per_page=100&sort=interestingness-desc&format=json&jsoncallback=getData";
+    var scriptEl = document.createElement("script");
+    scriptEl.src = url;
+    document.body.appendChild(scriptEl);
+
+    window.getData = function (o) {
+        for (var i = 0, j = o.photos.photo.length; i < j; i++) {
+            var photo = o.photos.photo[i];
+            console.log(photo.title);
+        };
+    };
+    </script>
+</body>
+</html>
