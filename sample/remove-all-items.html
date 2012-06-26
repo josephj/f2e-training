@@ -49,6 +49,7 @@
     // 目的：練習 document.getElementsByTagName() 並且以 for 迴圈移除
 
     // Step 1 - 以 document.getElementById 取得 delete-link 連結
+    var linkEl = document.getElementById("delete-link");
 
 
     // 當點選 el、delete-link 時該如何處理？
@@ -57,19 +58,23 @@
         e.preventDefault();
 
         // Step 2 - 以 document.getElementsByTagName 取得所有 li 的節點
+        var items = document.getElementsByTagName("li");
 
 
         // Step 3 - 用 for (起始值; 允許範圍; 遞增值) 迴圈「由後向前」刪除
         //          起始值為 items 的總數減一、允許範圍需大於等於 0、遞增值是每次 -1
+        for (var i = items.length - 1; i >= 0; i--) {
+            items[i].parentNode.removeChild(items[i]);
+        }
 
 
         // 最後這個連結也沒用了，把事件跟自己都給砍掉
-        removeEvent(el, "click", handleClick);
-        el.parentNode.removeChild(el);
+        removeEvent(linkEl, "click", handleClick);
+        linkEl.parentNode.removeChild(linkEl);
     };
 
     // 綁定 el 的點選處理事件
-    addEvent(el, "click", handleClick);
+    addEvent(linkEl, "click", handleClick);
     </script>
 
 </body>

@@ -30,14 +30,17 @@
 
     // 目的：讓畫面上的 #foo 元素移動，產生動畫效果
     // Step 1 - 用 document.getElementById 來取得 foo 節點
-
+    var el = document.getElementById("foo");
 
     // Step 2 - 用 setInterval 做一個計時器、每 100 毫秒跑 1 次
-
+    setInterval(function () {
         // Step 3 - 以 el.style.<CSS 屬性名稱> 設定目前的高度
         // Step 4 - 以自定 getStyle(元素, CSS屬性值) 取得目前 CSS 屬性值並加 1
-
-
+        el.style.top    = parseInt(getStyle(el, "top")) + 1 + "px";
+        el.style.left   = parseInt(getStyle(el, "left")) + 1 + "px";
+        el.style.width  = parseInt(getStyle(el, "width")) + 10 + "px";
+        el.style.height = parseInt(getStyle(el, "height")) + 10 + "px";
+    }, 100);
     </script>
 </body>
 </html>
