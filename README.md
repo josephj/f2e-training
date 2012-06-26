@@ -30,6 +30,10 @@
 * 本日實作：
   * [Animation 實作](https://github.com/josephj/f2e-training/blob/master/sample/animation.html)
   * [刪除節點實作](https://github.com/josephj/f2e-training/blob/master/sample/remove-all-items.html)
+* 範例列表：
+  * [了解物件導向](http://jsfiddle.net/josephj/9ry9a/1/)
+  * [字串物件的操作](http://jsfiddle.net/josephj/fFtX7/6/)
+  * [陣列物件的操作](http://jsfiddle.net/josephj/4LqfQ/2/)
 
 ## Lesson 5 - YUI Fun
 * 目標：開始使用 YUI。
@@ -37,6 +41,13 @@
   * [了解 YUI 模組](http://jsfiddle.net/josephj/fK4BE/)
   * 活用 DOM 跟 Event 處理 Lesson 4 的議題
   * 使用 Y.Anim 製作動畫
+* 課堂實作：
+  * [YUI Module](https://github.com/josephj/f2e-training/blob/master/sample/yui-module.html)
+  * [NodeList](https://github.com/josephj/f2e-training/blob/master/sample/yui-nodelist.html)
+  * [Event - 綁定事件](https://github.com/josephj/f2e-training/blob/master/sample/yui-event.html)
+  * [Event - preventDefault 與 stopPropagation](https://github.com/josephj/f2e-training/blob/master/sample/yui-event-prevent.html)
+  * [使用 Y.Get 取得 Flicrk 的照片](https://github.com/josephj/f2e-training/blob/master/sample/yui-get.html)
+  * [使用 Y.jsonp 取得 Flickr 的照片](https://github.com/josephj/f2e-training/blob/master/sample/yui-jsonp.html)
 
 ## Lesson 6 - Injection
 * 目標：使用 Fiddler、了解載入 &lt;script/&gt; 的數種方式及其優缺點
