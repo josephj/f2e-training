@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>YUI JSONP</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+<style type="text/css">
+#photo {
+    margin-bottom:10px;
+}
+#photo h2 {
+    margin-bottom:10px;
+    font-weight:bold;
+    font-size:123.1%;
+}
+#photo ul {
+    zoom:1;
+}
+#photo ul:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+#photo li {
+    float:left;
+    margin:0 5px 5px 0;
+}
+</style>
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+YUI().use("jsonp", "event-base", "node-base", function (Y) {
+
+    var callback, handleClick;
+
+    // 這個 function 要以Dynamic Script Tag 的方式將遠端網址給載入
+    // http://api.flickr.com/services/rest/?
+    //   method=flickr.photos.search&
+    //   api_key=d498ec869768ecea276a7cb3906241d9&tags=miiiCasa
+    //   &per_page=100&sort=interestingness-desc&format=json';
+    callback = function (data) {
+        var items    = data.photos.photo,
+            module   = Y.one("#photo"),
+            bodeNode = module.one(".bd"),
+            html = [];
+
+        html.push('<ul class="clearfix">');
+        Y.each(items, function (item) {
+            var src, link;
+            src  = [
+                "http://farm" + item.farm + ".static.flickr.com/",
+                item.server + "/",
+                item.id + "_" + item.secret +"_s.jpg"
+            ].join("");
+            link = "http://www.flickr.com/photos/" + item.owner + "/" + item.id;
+            html.push([
+                "<li>",
+                    '<a href="' + link + '" title="' + item.title + '">',
+                        '<img src="' + src + '">',
+                    "</a>",
+                "</li>"
+            ].join(""));
+        });
+        html.push("</ul>");
+        bodeNode.setContent(html.join(""));
+    };
+
+    handleClick = function (e) {
+        e.preventDefault();
+        var url = [
+            "http://api.flickr.com/services/rest/?",
+            "method=flickr.photos.search&",
+            "api_key=d498ec869768ecea276a7cb3906241d9&",
+            "tags=" + encodeURIComponent(Y.one("input").get("value")) + "&",
+            "per_page=100&",
+            "sort=interestingness-desc&",
+            "format=json&",
+            "jsoncallback={callback}"
+        ].join("");
+        Y.jsonp(url, callback);
+    };
+
+    Y.one(".view-link").on("click", handleClick);
+});
+</script>
+</head>
+<body>
+    <!-- 這是一個顯示照片的模組，為了效能考量，我們決定點選後再載入照片 -->
+    <div id="photo">
+        <div class="hd">
+            <h2>相關照片</h2>
+        </div>
+        <div class="bd">
+            <input type="text" name="value" value="miiiCasa">
+            <!-- 點選以後要讀取資料，請針對 .view-link 綁上事件 -->
+            <a href="http://www.flickr.com/photos/tags/nctu/interesting/" class="view-link">觀看照片</a>
+        </div>
+    </div>
+</body>
+</html>
