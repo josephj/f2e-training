@@ -34,11 +34,15 @@
   * [了解物件導向](http://jsfiddle.net/josephj/9ry9a/1/)
   * [字串物件的操作](http://jsfiddle.net/josephj/fFtX7/6/)
   * [陣列物件的操作](http://jsfiddle.net/josephj/4LqfQ/2/)
+* Q & A
+  * [DOM 2 與 DOM 3 的差別](./qa/dom.md)
+  * [String 及 DOM 物件的 concat 方法該如何使用](http://jsfiddle.net/josephj/TdAqq/1/)
 
 ## Lesson 5 - YUI Fun
 * 目標：開始使用 YUI。
 * 投影片：Modularization & Loader
-  * [了解 YUI 模組](http://jsfiddle.net/josephj/fK4BE/)
+  * [了解 YUI 架構](http://jsfiddle.net/josephj/fK4BE/)
+  * 如何使用 [YUI 官網](http://yuilibrary.com)
   * 活用 DOM 跟 Event 處理 Lesson 4 的議題
   * 使用 Y.Anim 製作動畫
 * 課堂實作：
