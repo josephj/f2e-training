@@ -36,7 +36,7 @@
   * [陣列物件的操作](http://jsfiddle.net/josephj/4LqfQ/2/)
 * Q & A
   * [DOM 2 與 DOM 3 的差別](https://github.com/josephj/f2e-training/blob/master/sample/qa/dom.md)
-  * [String 及 DOM 物件的 concat 方法該如何使用](http://jsfiddle.net/josephj/TdAqq/1/)
+  * [String 及 DOM 物件的 concat 方法該如何使用](http://jsfiddle.net/josephj/TdAqq/2/)
 
 ## Lesson 5 - YUI Fun
 * 目標：開始使用 YUI。
