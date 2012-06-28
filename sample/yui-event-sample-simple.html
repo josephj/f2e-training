@@ -35,12 +35,25 @@
     // Step 1 - 我們會操作到節點 (node)、以及綁事件 (event)
     // 所以要使用 (use) "node" 與 "event" 模組
     // YUI().use("模組1", "模組2", ... function (Y) {});
-        // Step 2 - 取得頁面上所有的 li 節點可以用 Y.all("li");
-        // Step 4 - 撰寫指定的處理函式
-            // Step 5. 取得目前觸發的元素為 e.target
-            // Step 6 採用 addClass() 方法加上 highlighted className
-        // Step 3 - 要綁上一個 click 的事件，可以用 Y.all("li").on("click", 指定的處理函式)
+    YUI().use("node", "event", function (Y) {
 
+        Y.all("li").on("click", function (e) {
+            e.target.toggleClass("highlighted");
+        });
+
+        // Step 2 - 取得頁面上所有的 li 節點可以用 Y.all("li");
+        // var items = Y.all("li");
+        // Step 4 - 撰寫指定的處理函式
+        // var handleClick = function (e) {
+            // Step 5. 取得目前觸發的元素為 e.target
+            // var item = e.target;
+            // Step 6 採用 addClass() 方法加上 highlighted className
+            // item.toggleClass("highlighted");
+        // };
+        // Step 3 - 要綁上一個 click 的事件，可以用 Y.all("li").on("click", 指定的處理函式)
+        // items.on("click", handleClick);
+
+    });
     </script>
 </body>
 </html>
