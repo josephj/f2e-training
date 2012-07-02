@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<meta name="created" content="2012-07-02">
+<meta name="modified" content="Mon Jul  2 21:32:15 2012">
+<title>Script Tag Hack</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+    <div id="foo"></div>
+    <script>
+    function getFlickrData(data) {
+        var items = data.items;
+        var html = ""
+        for (var i = 0, j = items.length; i < j; i++) {
+            html = html + items[i].description;
+        }
+        document.getElementById("foo").innerHTML = html;
+    }
+    </script>
+    <script src="http://api.flickr.com/services/feeds/photos_public.gne?tags=yahootw&lang=en-us&format=json&jsoncallback=getFlickrData"></script>
+</body>
+</html>

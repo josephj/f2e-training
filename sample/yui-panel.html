@@ -1,78 +1,111 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="zh-tw">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>YUI 視窗</title>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/button/assets/skins/sam/button.css">
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css">
+<title>YUI Panel</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
 <style type="text/css">
 #photo {
     margin-bottom:10px;
 }
 #photo h2 {
-    color:#ccc;
-    margin-bottom:5px;
-    text-align:center;
+    margin-bottom:10px;
+    font-weight:bold;
+    font-size:123.1%;
 }
-#photo .ft {
-    text-align:center;
-}    
+#photo ul {
+    zoom:1;
+}
+#photo ul:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+#photo li {
+    float:left;
+    margin:0 5px 5px 0;
+}
 </style>
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+YUI({skin: "night"}).use("event", "node", "panel", function (Y) {
+    window.jsonFlickrApi = function (data) {
+        var items    = data.photos.photo,
+            module   = Y.one("#photo"),
+            bodeNode = module.one(".bd"),
+            html = [];
+        html.push('<ul class="clearfix">');
+        Y.each(items, function (item) {
+            var src, link;
+            src  = [
+                "http://farm" + item.farm + ".static.flickr.com/",
+                item.server + "/",
+                item.id + "_" + item.secret +"_s.jpg"
+            ].join("");
+            link = "http://www.flickr.com/photos/" + item.owner + "/" + item.id;
+            html.push([
+                "<li>",
+                    '<a href="' + link + '" title="' + item.title + '">',
+                        '<img src="' + src + '">',
+                    "</a>",
+                "</li>"
+            ].join(""));
+        });
+        html.push("</ul>");
+        bodeNode.setContent(html.join(""));
+    };
+
+    Y.one(".view-link").on("click", function (e) {
+        e.preventDefault();
+        value = encodeURIComponent(Y.one(".keyword").get("value"));
+        var url = [
+            "http://api.flickr.com/services/rest/?",
+            "method=flickr.photos.search&",
+            "api_key=d498ec869768ecea276a7cb3906241d9&",
+            "tags=" + value + "&",
+            "per_page=100&",
+            "sort=interestingness-desc&",
+            "format=json"
+        ].join("");
+        Y.Get.script(url);
+    });
+
+    // Step 1 - 建立 Panel 的 Instance
+    // var panel = new Y.Panel(設定);
+
+    // 可以只綁一個外層節點 ul、不需要每個 li 節點都綁 click 事件
+    Y.delegate("click", function (e) {
+        e.preventDefault();
+        // 取得點選圖片的路徑、將 _s 移除即可成為大圖
+        var src = e.target.get("src").replace("_s", "");
+        // Step 2 - 將大圖的 img 標籤塞入 panel 的 body 中
+
+        // Step 3 - 目前還是隱藏的，需要用 show 來做顯示
+
+    }, "ul", "li a img"); // 只綁 ul 之內、符合 li a img 選取器的節點
+});
+</script>
 </head>
-<body>
-<body class="yui-skin-sam">
+<body class="yui3-skin-night">
     <div id="doc2" class="yui-t5">
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-
-                    <!-- 這是點選視窗後所會看到的模組 -->
-                    <div id="panel">
+                    <!-- 目標： 這是一個顯示照片的模組，為了效能考量，我們決定點選後再載入照片 -->
+                    <div id="photo">
                         <div class="hd">
-                            <h2>觀看照片</h2>
+                            <h2>相關照片</h2>
                         </div>
                         <div class="bd">
-                            <img src="http://farm4.static.flickr.com/3187/3011882631_c165e88273.jpg" width="500" height="375" alt="Yahoo! 新筆記本"></a>
+                            <input class="keyword" name="keyword" value="yahootw">
+                            <!-- 點選以後要讀取資料，請針對 .view-link 綁上事件 -->
+                            <a href="http://www.flickr.com/photos/tags/nctu/interesting/" class="view-link">觀看照片</a>
                         </div>
                     </div>
-                
                 </div>
-            </div>
-            <div class="yui-b">
-
-                <!-- 這是一個位於側邊欄的最新照片模組 -->
-                <div id="photo">
-                    <div class="hd">
-                        <h2>廣告</h2>
-                    </div>
-                    <div class="bd">
-                        <a href="http://www.flickr.com/photos/josephj/3011882631/" title="Yahoo! 新筆記本 by Awoo~, on Flickr"><img src="http://farm4.static.flickr.com/3187/3011882631_c165e88273_m.jpg" width="240" height="180" alt="Yahoo! 新筆記本"></a>
-                    </div>
-                    <div class="ft">
-                        <a href="http://www.flickr.com/photos/josephj/3011882631/" id="view-link">觀看照片</a>
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
-    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
-    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/element/element-beta-min.js"></script>
-    <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/button/button-min.js"></script>
-    <script type="text/javascript">
-    // 已經有了一個 YUI Button 的例項
-    var oButton = new YAHOO.widget.Button('view-link');
-    // 請以 new YAHOO.widget.Panel([模組id]) 再做一個 YUI Panel 的例項吧，預設請設定為隱藏
-
-    // 點選時的事件處理函式，就是觸動 Panel 的顯示 .show()
-    var onButtonClick = function(oEvent) {
-        
-    }
-    // 現在則希望點選此 Button 時、開一個 Div 視窗在頁面上
-    oButton.addListener('click', onButtonClick);
-    </script>
 </body>
 </html>

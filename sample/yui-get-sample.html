@@ -29,7 +29,7 @@
 </style>
 <script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
 <script type="text/javascript">
-YUI().use("event-base", "node-base", function (Y) {
+YUI({skin: "night"}).use("event", "node", "panel", function (Y) {
 
     // Step 3. 當取得資料後，此 Function 會立刻被執行
     window.jsonFlickrApi = function (data) {
@@ -81,12 +81,10 @@ YUI().use("event-base", "node-base", function (Y) {
         // Step 2. 利用 Y.Get.script(url)，取得遠端的資料
         Y.Get.script(url);
     });
-
-
 });
 </script>
 </head>
-<body>
+<body class="yui3-skin-night">
     <div id="doc2" class="yui-t5">
         <div id="bd">
             <div id="yui-main">
