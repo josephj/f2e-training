@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>YUI Get</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+<style type="text/css">
+#photo {
+    margin-bottom:10px;
+}
+#photo h2 {
+    margin-bottom:10px;
+    font-weight:bold;
+    font-size:123.1%;
+}
+#photo ul {
+    zoom:1;
+}
+#photo ul:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+#photo li {
+    float:left;
+    margin:0 5px 5px 0;
+}
+</style>
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+YUI().use("event-base", "node-base", function (Y) {
+
+    // 這個 function 要以Dynamic Script Tag 的方式將遠端網址給載入
+    window.jsonFlickrFeed = function (data) {
+        var items    = data.items,
+            module   = Y.one("#photo"),
+            bodeNode = module.one(".bd"),
+            html = [];
+
+        // 組成 HTML
+        html.push('<ul class="clearfix">');
+        Y.each(items, function (item) {
+            var src, link;
+            src  = item.media.m.replace("_m", "_s");
+            link = item.link;
+            html.push([
+                "<li>",
+                    '<a href="' + link + '" title="' + item.title + '">',
+                        '<img src="' + src + '">',
+                    "</a>",
+                "</li>"
+            ].join(""));
+        });
+        html.push("</ul>");
+        bodeNode.setContent(html.join(""));
+    };
+
+    Y.one(".view-link").on("click", function (e) {
+        e.preventDefault();
+        var url = "http://api.flickr.com/services/feeds/photos_public.gne?" +
+                  "tags=yahootw&lang=en-us&format=json";
+
+        // 請利用 Y.Get.script 將上述網址的資料下載回來
+        Y.Get.script(url);
+
+    });
+
+
+});
+</script>
+</head>
+<body>
+    <div id="doc2" class="yui-t5">
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+                    <!-- 這是一個顯示照片的模組，為了效能考量，我們決定點選後再載入照片 -->
+                    <div id="photo">
+                        <div class="hd">
+                            <h2>相關照片</h2>
+                        </div>
+                        <div class="bd">
+                            <!-- 點選以後要讀取資料，請針對 .view-link 綁上事件 -->
+                            <a href="http://www.flickr.com/photos/tags/nctu/interesting/" class="view-link">觀看照片</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
