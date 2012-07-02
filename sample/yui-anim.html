@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>YUI Animation Sample</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+#foo {
+    background: red;
+    border: solid 1px #000;
+    height: 100px;
+    width: 100px;
+}
+</style>
+</head>
+<body>
+
+    <div id="foo">#foo</div>
+
+    <script>
+    YUI().use("anim", function (Y) {
+
+        var anim = new Y.Anim({
+            node: "#foo",
+            // 從任何 CSS 的屬性...
+            from: {
+                width : "50px",
+                height: "50px",
+                opacity: "0.2",
+                xy: [10, 10]
+            },
+            // 到任何 CSS 的屬性...
+            to: {
+                width : "300px",
+                height: "300px",
+                opacity: "1",
+                xy: [120, 120]
+            },
+            // 總共所需時間 (秒數)
+            duration: 3,
+            // 效果：可參考 http://yuilibrary.com/yui/docs/api/classes/Easing.html
+            easing: "backBoth"
+        });
+
+        // 開始跑
+        anim.run();
+
+        // 綁定結束事件。
+        anim.on("end", function (e) {
+            this.get("node").setStyle("backgroundColor", "#ccc");
+        });
+
+    });
+    </script>
+</body>
+</html>
