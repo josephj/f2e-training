@@ -83,8 +83,10 @@
 * Non-blocking JavaScript
  * [Non-blocking 載入 JavaScript](josephj.com/entry.php?id=349)
  * [Non-blocking JavaScript Downloads](http://www.yuiblog.com/blog/2008/07/22/non-blocking-scripts/)
+ * [Put Scripts at the bottom](http://developer.yahoo.com/performance/rules.html#js_bottom)
 
 ## Lesson 8 - Performance
+* [Performance Rules](http://developer.yahoo.com/performance/rules.html)
 
 ## Others
 * HTML5 Introduction
