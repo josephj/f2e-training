@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<meta name="created" content="2012-07-04">
+<meta name="modified" content="Wed 04 Jul 2012 04:26:36 PM CST">
+<title> Prototype</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+ul li {
+    float: left;
+}
+</style>
+</head>
+<body>
+    <div id="foo"></div>
+    <script>
+    YUI().use("node", "yql", function (Y) {
+        var apiKey = "d498ec869768ecea276a7cb3906241d9",
+            yql = 'select * from flickr.photos.interestingness(20) ' +
+                  'where api_key = "' + apiKey + '"';
+        Y.YQL(yql, function (data) {
+            var items = data.query.results.photo,
+                html = [];
+
+            html.push('<ul class="clearfix">');
+            Y.each(items, function (item) {
+                var src, link;
+                src  = [
+                    "http://farm" + item.farm + ".static.flickr.com/",
+                    item.server + "/",
+                    item.id + "_" + item.secret +"_s.jpg"
+                ].join("");
+                link = "http://www.flickr.com/photos/" + item.owner + "/" + item.id;
+                html.push([
+                    "<li>",
+                        '<a href="' + link + '" title="' + item.title + '">',
+                            '<img src="' + src + '">',
+                        "</a>",
+                    "</li>"
+                ].join(""));
+            });
+            html.push("</ul>");
+            Y.one("#foo").setContent(html.join(""));
+        });
+    });
+    </script>
+</body>
+</html>
