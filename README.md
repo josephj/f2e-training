@@ -73,6 +73,12 @@
 * 回家功課：
   * 利用今天教的 Y.Get.script() 取得外部網站得資料 (可使用 Flickr, 可透過 Pipe 或 YQL...)
   * Ex - [知識+ 的 API](http://tw.knowledge.yahooapis.com/v1/SEARCH?appid=Fbn2UILIkYoPqtaNTG6aFYgkHY9piA2A8A--&p=ipod&kf=CD&intl=tw&format=json&callback=getData)
+  * [以 Y.YQL 取得 Flickr 的資料](http://josephj.com/training/f2e-training/sample/yui-yql.html)
+    * [Flickr API Key 申請頁面](http://www.flickr.com/services/apps/create/)
+  * [以 Y.jsonp 取得 Yahoo! Pipes 所組合出來的 Flickr 資料](http://josephj.com/training/f2e-training/sample/yui-pipes.html)
+    * [帥哥與正妹的 Y! Pipes](http://pipes.yahoo.com/pipes/pipe.info?_id=7d48dfb65ddd5ee643dce51df2326a33) - JSON Feed 可以多加一個 _callback 的 GET 參數
+    * [帥哥 Feed](http://api.flickr.com/services/feeds/photos_public.gne?id=10912301@N06&tags=%E7%BE%8E%E5%A5%B3&lang=en-us&format=rss_200)
+    * [正妹 Feed](http://api.flickr.com/services/feeds/photos_public.gne?id=33784581@N07&tags=%E5%B8%A5%E5%93%A5&lang=en-us&format=rss_200)
 
 ## Lesson 7 - Script Injection
 * 目標：使用 Fiddler、了解載入 &lt;script/&gt; 的數種方式及其優缺點
@@ -83,6 +89,7 @@
   * 在 &lt;/body&gt; 後
   * 在 body 中
 * 為什麼一般廣告討人厭？
+  * [大圖不會 Block 頁面讀取](http://josephj.com/training/f2e-training/sample/blocking-image.html) - 我錯了 :p
   * [會在 Server 等 10 秒才結束的 JavaScript](http://josephj.com/training/f2e-training/sample/sleep-10.php)
   * [Blocking JavaScript](http://josephj.com/training/f2e-training/sample/blocking-javacript.html)
     * [Use document.write 1](http://josephj.com/training/f2e-training/sample/document-write-javascript.html)
