@@ -76,11 +76,19 @@
 
 ## Lesson 7 - Script Injection
 * 目標：使用 Fiddler、了解載入 &lt;script/&gt; 的數種方式及其優缺點
-* [Fiddler 下載點](http://www.fiddler2.com/fiddler2/version.asp)
+  * Fiddler - 除錯超好用的工具
+    * [Fiddler 下載點](http://www.fiddler2.com/fiddler2/version.asp)
 * &lt;script/&gt; 的擺放位置
-* Long running script => Block!.
-* Long running image => Block!.
-* Non-blocking JavaScript
+  * 在 &lt;/head&gt; 前
+  * 在 &lt;/body&gt; 後
+  * 在 body 中
+* 為什麼一般廣告討人厭？
+  * [會在 Server 等 10 秒才結束的 JavaScript](http://josephj.com/training/f2e-training/sample/sleep-10.php)
+  * [Blocking JavaScript](http://josephj.com/training/f2e-training/sample/blocking-javacript.html)
+    * [Use document.write 1](http://josephj.com/training/f2e-training/sample/document-write-javascript.html)
+    * [Use document.write 2](http://josephj.com/training/f2e-training/sample/document-write-javascript-2.html)
+  * [Non-blocking JavaScript](http://josephj.com/training/f2e-training/sample/non-blocking-javacript.html)
+* 參考文件：
  * [Non-blocking 載入 JavaScript](josephj.com/entry.php?id=349)
  * [Non-blocking JavaScript Downloads](http://www.yuiblog.com/blog/2008/07/22/non-blocking-scripts/)
 
