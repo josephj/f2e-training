@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Yahoo! Pipes</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+li {display: inline-block;}
+</style>
+</head>
+<body class="yui3-skin-sam">
+    <div id="foo"></div>
+    <script>
+    YUI().use("panel", "node-base", "event-delegate", "jsonp", function (Y) {
+        var url = "http://pipes.yahoo.com/pipes/pipe.run?_id=7d48dfb65ddd5ee643dce51df2326a33&_render=json&_callback={callback}";
+        Y.jsonp(url, function (o) {
+            var items = o.value.items,
+                html = [];
+            html.push("<ul>");
+            Y.each(items, function (item) {
+                html.push("<li>" + item.description + "</li>");
+            });
+            html.push("</ul>");
+            html = html.join("");
+            Y.one("#foo").setContent(html);
+        });
+
+        var panel = new Y.Panel({
+            width: "500px",
+            height: "700px",
+            centered: true,
+            visible: false
+        });
+        panel.render();
+
+        Y.delegate("click", function (e) {
+            e.preventDefault();
+            var node = e.currentTarget,
+                src = node.ancestor("li").one("img").get("src");
+            src = src.replace("_m", "");
+            panel.set("bodyContent", '<img src="' + src + '">');
+            panel.show();
+
+
+        }, "#foo", "li a");
+
+    });
+    </script>
+</body>
+</html>
