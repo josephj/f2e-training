@@ -85,6 +85,16 @@
   * Fiddler - 除錯超好用的工具
     * [Fiddler 下載點](http://www.fiddler2.com/fiddler2/version.asp)
     * [CustomRules.js](http://josephj.com/training/f2e-training/sample/CustomRules.js)
+
+    ```
+    請各位點選 http://josephj.com/training/f2e-training/sample/CustomRules.js 會看到一堆 JavaScript
+    打開 Fiddler 工具列的 Rules > Custom Rules... 把原本的內容另存新檔做備份
+    再以上面的連結的內容全部取代、儲存
+    順利的話就會聽到「搭搭」的音效（當然喇叭要打開）
+    然後你再去工具列的 Rules 就會看到 "Inject JavaScript." 的選項
+    點選後去 Reload 任意網頁，都會出現我們昨天那個得等很久的 JavaScript alert
+    ```
+
 * &lt;script/&gt; 的擺放位置
   * 在 &lt;/head&gt; 前
   * 在 &lt;/body&gt; 後
@@ -99,6 +109,7 @@
 * 參考文件：
  * [Non-blocking 載入 JavaScript](josephj.com/entry.php?id=349)
  * [Non-blocking JavaScript Downloads](http://www.yuiblog.com/blog/2008/07/22/non-blocking-scripts/)
+ 點選後去 Reload 任意網頁，都會出現我們昨天那個得等很久的 JavaScript alert
 
 ## Lesson 8 - Performance
 
