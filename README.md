@@ -111,6 +111,7 @@
 * 目標：使用 Fiddler、了解載入 &lt;script/&gt; 的數種方式及其優缺點
   * Fiddler - 除錯超好用的工具
     * [Fiddler 下載點](http://www.fiddler2.com/fiddler2/version.asp)
+    * [CustomRules.js](http://josephj.com/training/f2e-training/sample/CustomRules.js)
 * &lt;script/&gt; 的擺放位置
   * 在 &lt;/head&gt; 前
     * 所有 DOM 物件皆未產生，需要配合 load 或 domready 事件（或其他偵測的方式）。
