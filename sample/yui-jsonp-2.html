@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>YUI YQL Sample</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.0/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.0/build/cssfonts/fonts-min.css">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+    <div id="foo"></div>
+    <script>
+    YUI().use('node', 'jsonp', function (Y) {
+        var url = "http://pipes.yahoo.com/pipes/pipe.run?_id=7d48dfb65ddd5ee643dce51df2326a33&_render=json&_callback={callback}"
+        Y.jsonp(url, function (data) {
+            var items = data.value.items,
+                html = [];
+            html.push("<ul>");
+            Y.each(items, function (item) {
+                html.push("<li>" + item.description + "</li>");
+            });
+            html.push("</ul>");
+            Y.one("#foo").setContent(html.join(""));
+        });
+    });
+    </script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+</body>
+</html>

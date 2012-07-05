@@ -6,6 +6,34 @@
 * 目標：對於 HTML 有正確的觀念
 * 投影片：[語意與HTML](https://speakerdeck.com/u/josephj/p/html)
 * 推薦參考資料：[The Elements of Meaningful XHTML](http://tantek.com/presentations/2005/09/elements-of-xhtml)
+* 常用到的 HTML 樣板：
+
+    ````html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <title>Prototype</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+    <style type="text/css">
+
+    </style>
+    </head>
+    <body class="yui-skin-sam">
+
+        <div id="foo">
+        </div>
+
+        <script>
+        YUI().use("node", function (Y) {
+
+        });
+        </script>
+    </body>
+    </html>
+    ````
 
 ## Lesson 2 - 樣式之美 (CSS)
 * 目標：使用 CSS
@@ -76,7 +104,8 @@
   * [以 Y.YQL 取得 Flickr 的資料](http://josephj.com/training/f2e-training/sample/yui-yql.html)
     * [Flickr API Key 申請頁面](http://www.flickr.com/services/apps/create/)
   * [以 Y.jsonp 取得 Yahoo! Pipes 所組合出來的 Flickr 資料](http://josephj.com/training/f2e-training/sample/yui-pipes.html)
-    * [帥哥與正妹的 Y! Pipes](http://pipes.yahoo.com/pipes/pipe.info?_id=7d48dfb65ddd5ee643dce51df2326a33) - JSON Feed 可以多加一個 _callback 的 GET 參數
+    * [帥哥與正妹的 Y! Pipes](http://pipes.yahoo.com/pipes/pipe.info?_id=7d48dfb65ddd5ee643dce51df2326a33)
+      * JSON Feed 可以多加一個 "_callback" 的 GET 參數
     * [帥哥 Feed](http://api.flickr.com/services/feeds/photos_public.gne?id=10912301@N06&tags=%E7%BE%8E%E5%A5%B3&lang=en-us&format=rss_200)
     * [正妹 Feed](http://api.flickr.com/services/feeds/photos_public.gne?id=33784581@N07&tags=%E5%B8%A5%E5%93%A5&lang=en-us&format=rss_200)
 
@@ -97,9 +126,12 @@
 
 * &lt;script/&gt; 的擺放位置
   * 在 &lt;/head&gt; 前
-  * 在 &lt;/body&gt; 後
-  * 在 body 中
-* 為什麼一般廣告討人厭？
+    * 所有 DOM 物件皆未產生，需要配合 load 或 domready 事件（或其他偵測的方式）。
+    * 因 JavaScript 有 Blocking 的行為，使用者得等到 JavaScript 下載完畢才能看到網頁內容。
+  * 在 &lt;/body&gt; 前
+    * 所有 DOM 物件皆已經產生，不需要特別的處理即可存取。
+    * 所有的內容皆會在第一時間被看到。
+* 在 &lt;/body&gt; 到處都有的廣告 &lt;script/&gt; 為何討人厭？
   * [大圖不會 Block 頁面讀取](http://josephj.com/training/f2e-training/sample/blocking-image.html) - 我錯了 :p
   * [會在 Server 等 10 秒才結束的 JavaScript](http://josephj.com/training/f2e-training/sample/sleep-10.php)
   * [Blocking JavaScript](http://josephj.com/training/f2e-training/sample/blocking-javacript.html)
@@ -107,11 +139,17 @@
     * [Use document.write 2](http://josephj.com/training/f2e-training/sample/document-write-javascript-2.html)
   * [Non-blocking JavaScript](http://josephj.com/training/f2e-training/sample/non-blocking-javacript.html)
 * 參考文件：
- * [Non-blocking 載入 JavaScript](josephj.com/entry.php?id=349)
  * [Non-blocking JavaScript Downloads](http://www.yuiblog.com/blog/2008/07/22/non-blocking-scripts/)
- 點選後去 Reload 任意網頁，都會出現我們昨天那個得等很久的 JavaScript alert
+ * [Put Scripts at the bottom](http://developer.yahoo.com/performance/rules.html#js_bottom)
+ * [Bye Bye Embed - A List Apart](http://www.alistapart.com/articles/byebyeembed/)
+ * [Fiddler Extensions](http://www.fiddler2.com/Fiddler2/extensions.asp)
+ * [YQL 利用 XPath 直接抓取網頁內容](http://developer.yahoo.com/yql/console/#h=select%20*%20from%20html%20where%20url%3D%22http%3A//finance.yahoo.com/q%3Fs%3Dyhoo%22%20and%0A%20%20%20%20%20%20xpath%3D%27//div%5B@id%3D%22yfi_headlines%22%5D/div%5B2%5D/ul/li/a%27)
+ * [Non-blocking 載入 JavaScript - josephj.com](josephj.com/entry.php?id=349)
+ * [Cross Frame: 與不同網域的 Frame 做互動 - josephj.com](http://josephj.com/entry.php?id=338)
+ * [了解 embed 及 param 標籤中 wmode 屬性、並且動態修改它 - josephj.com](http://josephj.com/entry.php?id=364)
 
 ## Lesson 8 - Performance
+* [Performance Rules](http://developer.yahoo.com/performance/rules.html)
 
 ## Others
 * HTML5 Introduction
