@@ -8,6 +8,7 @@
 * 推薦參考資料：[The Elements of Meaningful XHTML](http://tantek.com/presentations/2005/09/elements-of-xhtml)
 * 常用到的 HTML 樣板：
 
+    ````html
     <!DOCTYPE html>
     <html>
     <head>
@@ -32,6 +33,7 @@
         </script>
     </body>
     </html>
+    ````
 
 ## Lesson 2 - 樣式之美 (CSS)
 * 目標：使用 CSS
@@ -127,12 +129,14 @@
     * [Use document.write 2](http://josephj.com/training/f2e-training/sample/document-write-javascript-2.html)
   * [Non-blocking JavaScript](http://josephj.com/training/f2e-training/sample/non-blocking-javacript.html)
 * 參考文件：
- * [Non-blocking 載入 JavaScript](josephj.com/entry.php?id=349)
  * [Non-blocking JavaScript Downloads](http://www.yuiblog.com/blog/2008/07/22/non-blocking-scripts/)
  * [Put Scripts at the bottom](http://developer.yahoo.com/performance/rules.html#js_bottom)
  * [Bye Bye Embed - A List Apart](http://www.alistapart.com/articles/byebyeembed/)
- * [Cross Frame: 與不同網域的 Frame 做互動 - josephj.com](http://josephj.com/entry.php?id=338)
  * [Fiddler Extensions](http://www.fiddler2.com/Fiddler2/extensions.asp)
+ * [YQL 利用 XPath 直接抓取網頁內容](http://developer.yahoo.com/yql/console/#h=select%20*%20from%20html%20where%20url%3D%22http%3A//finance.yahoo.com/q%3Fs%3Dyhoo%22%20and%0A%20%20%20%20%20%20xpath%3D%27//div%5B@id%3D%22yfi_headlines%22%5D/div%5B2%5D/ul/li/a%27)
+ * [Non-blocking 載入 JavaScript - josephj.com](josephj.com/entry.php?id=349)
+ * [Cross Frame: 與不同網域的 Frame 做互動 - josephj.com](http://josephj.com/entry.php?id=338)
+ * [了解 embed 及 param 標籤中 wmode 屬性、並且動態修改它 - josephj.com](http://josephj.com/entry.php?id=364)
 
 ## Lesson 8 - Performance
 * [Performance Rules](http://developer.yahoo.com/performance/rules.html)
