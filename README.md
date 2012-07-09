@@ -150,11 +150,6 @@
 
 ## Lesson 8 - Performance
 * [Performance Rules](http://developer.yahoo.com/performance/rules.html)
+* [HTML5 Presentation](http://slides.html5rocks.com/)
+  * [HTML5 Study](https://github.com/josephj/f2e-training/blob/master/html5-study.md)
 
-## Others
-* HTML5 Introduction
-* Uploader
-* postMessage CrossFrame
-* pushState
-* File Reference
-* WebSocket
