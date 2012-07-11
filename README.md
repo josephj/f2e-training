@@ -93,11 +93,11 @@
   * [讓外部的 Function 也能用 YUI](http://jsfiddle.net/josephj/XRyUa/)
     * 請參考：[石頭閒語 - Function.prototype.call() and Function.prototype.apply()](http://blog.roodo.com/rocksaying/archives/2532303.html)
 * 課堂實作：
-  * [了解 Script Tag Hack](http://josephj.com/training/f2e-training/script-tag-hack.html)
-  * [使用 Y.Get 取得 Flicrk 的照片](http://josephj.com/training/f2e-training/yui-get.html) ([範例結果](http://josephj.com/training/f2e-training/yui-get-sample.html))
-   * 更簡單的用法 JSONP - [使用 Y.jsonp 取得 Flickr 的照片](http://josephj.com/training/f2e-training/yui-jsonp.html) ([範例結果](http://josephj.com/training/f2e-training/yui-jsonp-sample.html))
-  * [使用 Y.Anim](http://josephj.com/training/f2e-training/yui-anim.html) ([範例結果](http://josephj.com/training/f2e-training/yui-anim-sample.html))
-  * [使用 Y.Panel](http://josephj.com/training/f2e-training/yui-panel.html) ([範例結果](http://josephj.com/training/f2e-training/yui-panel-sample.html))
+  * [了解 Script Tag Hack](http://josephj.com/training/f2e-training/sample/script-tag-hack.html)
+  * [使用 Y.Get 取得 Flicrk 的照片](http://josephj.com/training/f2e-training/sample/yui-get.html) ([範例結果](http://josephj.com/training/f2e-training/sample/yui-get-sample.html))
+   * 更簡單的用法 JSONP - [使用 Y.jsonp 取得 Flickr 的照片](http://josephj.com/training/f2e-training/sample/yui-jsonp.html) ([範例結果](http://josephj.com/training/f2e-training/sample/yui-jsonp-sample.html))
+  * [使用 Y.Anim](http://josephj.com/training/f2e-training/sample/yui-anim.html) ([範例結果](http://josephj.com/training/f2e-training/sample/yui-anim-sample.html))
+  * [使用 Y.Panel](http://josephj.com/training/f2e-training/sample/yui-panel.html) ([範例結果](http://josephj.com/training/f2e-training/sample/yui-panel-sample.html))
 * 回家功課：
   * 利用今天教的 Y.Get.script() 取得外部網站得資料 (可使用 Flickr, 可透過 Pipe 或 YQL...)
   * Ex - [知識+ 的 API](http://tw.knowledge.yahooapis.com/v1/SEARCH?appid=Fbn2UILIkYoPqtaNTG6aFYgkHY9piA2A8A--&p=ipod&kf=CD&intl=tw&format=json&callback=getData)
@@ -152,4 +152,5 @@
 * [Performance Rules](http://developer.yahoo.com/performance/rules.html)
 * [HTML5 Presentation](http://slides.html5rocks.com/)
   * [HTML5 Study](https://github.com/josephj/f2e-training/blob/master/html5-study.md)
+
 
